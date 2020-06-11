@@ -1,0 +1,13 @@
+type ChargeCode {
+    id: ID!
+    name: String!
+    code: String!
+    description: String
+    expired: Boolean!
+}
+
+type Query {
+    #    chargeCodes: [ChargeCode!]!
+    chargeCode(id: ID!): ChargeCode
+    chargeCodes: [ChargeCode]!
+}

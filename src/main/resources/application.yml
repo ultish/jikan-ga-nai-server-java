@@ -1,0 +1,71 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:9999/jikanganai
+    driver: org.postgresql.Driver
+    username: postgres
+    password: password
+    name: jikanganai
+
+  application:
+    name: graphql-todo-app
+#  servlet:
+#    multipart:
+#      enabled: true
+#      location: /tmp
+
+logging:
+  level:
+    root: DEBUG
+
+#server:
+#  port: 9000
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: health,info,metrics
+#
+
+graphql:
+  #  spring-graphql-common:
+  #    clientMutationIdName: clientMutationId
+  #    injectClientMutationId: true
+  #    allowEmptyClientMutationId: false
+  #    mutationInputArgumentName: input
+  #    outputObjectNamePrefix: Payload
+  #    inputObjectNamePrefix: Input
+  #    schemaMutationObjectName: Mutation
+  servlet:
+    mapping: /graphql
+    enabled: true
+    corsEnabled: true
+#graphql:
+#  servlet:
+#    actuator-metrics: true
+#  playground:
+#    cdn:
+#      version: latest
+#
+#altair:
+#  enabled: true
+#  cdn:
+#    enabled: false
+#
+#graphiql:
+#  enabled: true
+#  cdn:
+#    enabled: true
+#    version: 0.17.5
+#
+#voyager:
+#  enabled: true
+#  cdn:
+#    enabled: false
+#
+#graphql.playground:
+#  enabled: true
+#  mapping: /playground
+#  endpoint: /graphql
+#  cdn:
+#    enabled: false
