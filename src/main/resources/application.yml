@@ -13,9 +13,10 @@ spring:
 #      enabled: true
 #      location: /tmp
 
+
 logging:
   level:
-    root: DEBUG
+    root: INFO
 
 #server:
 #  port: 9000

@@ -6,6 +6,8 @@ import jikanganai.server.repositories.ChargeCodeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class ChargeCodeResolver implements GraphQLQueryResolver {
     @Autowired
@@ -19,7 +21,11 @@ public class ChargeCodeResolver implements GraphQLQueryResolver {
      * @param id
      * @return
      */
-    public ChargeCode chargeCode(String id) {
+    public ChargeCode chargeCode(Integer id) {
         return repository.find(id);
+    }
+
+    public List<ChargeCode> chargeCodes() {
+        return repository.all();
     }
 }
