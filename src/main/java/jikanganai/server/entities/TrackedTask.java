@@ -23,7 +23,8 @@ public class TrackedTask {
         "trackedtaskId"),
         inverseJoinColumns = @JoinColumn(name = "chargecodeId"))
     private List<ChargeCode> chargeCodes;
-    //    private List<TimeBlock> timeBlocks;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "trackedtaskId")
+    private List<TimeBlock> timeBlocks;
     private Date createdAt;
     private Boolean overtimeEnabled;
 

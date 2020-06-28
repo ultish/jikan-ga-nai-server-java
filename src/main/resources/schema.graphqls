@@ -15,13 +15,12 @@ type ChargeCode {
 type TimeBlock {
     id: ID!
     startTime: Float!
-    minutes: Int
 }
 type TrackedTask {
     id: ID!
     notes: String
     chargeCodes: [ChargeCode!]
-    #    timeBlocks: [TimeBlock!]
+    timeBlocks: [TimeBlock!]
     createdAt: Float!
     overtimeEnabled: Boolean!
 }

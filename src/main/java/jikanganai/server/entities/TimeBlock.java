@@ -1,8 +1,6 @@
 package jikanganai.server.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,5 +18,8 @@ public class TimeBlock {
     @GeneratedValue()
     private Integer id;
     private Date startTime;
-    private Integer minutes;
+    //    private Integer minutes;
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
+    private Integer trackedtaskId;
 }
