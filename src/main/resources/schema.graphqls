@@ -1,3 +1,10 @@
+enum DayMode {
+    NORMAL
+    HOL_PUBLIC
+    HOL_PERSONAL
+    HOL_RDO
+    HOL_ANNUAL
+}
 type ChargeCode {
     id: ID!
     name: String!
@@ -5,9 +12,23 @@ type ChargeCode {
     description: String
     expired: Boolean!
 }
+type TimeBlock {
+    id: ID!
+    startTime: Float!
+    minutes: Int
+}
+type TrackedTask {
+    id: ID!
+    notes: String
+    chargeCodes: [ChargeCode!]
+    #    timeBlocks: [TimeBlock!]
+    createdAt: Float!
+    overtimeEnabled: Boolean!
+}
 
 type Query {
-    #    chargeCodes: [ChargeCode!]!
     chargeCode(id: ID!): ChargeCode
     chargeCodes: [ChargeCode]!
+    trackedTasks: [TrackedTask]!
 }
+

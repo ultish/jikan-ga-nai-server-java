@@ -5,6 +5,10 @@ spring:
     username: postgres
     password: password
     name: jikanganai
+  jpa:
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
 
   application:
     name: graphql-todo-app

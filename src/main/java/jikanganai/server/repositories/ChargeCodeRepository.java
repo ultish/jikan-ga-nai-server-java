@@ -1,6 +1,7 @@
 package jikanganai.server.repositories;
 
 import jikanganai.server.entities.ChargeCode;
+import jikanganai.server.entities.TrackedTask;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.EntityManager;
@@ -27,7 +28,13 @@ public class ChargeCodeRepository {
     }
 
     public List<ChargeCode> all() {
-        return em.createQuery("select cc from ChargeCode cc").getResultList();
+        return em.createQuery("select cc from ChargeCode cc")
+            .getResultList();
+    }
+
+    public List<ChargeCode> findByTrackedTask(TrackedTask trackedTask) {
+        //        return em.createQuery()
+        return null;
     }
 
 }

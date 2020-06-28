@@ -1,15 +1,12 @@
 package jikanganai.server.entities;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -20,19 +17,14 @@ public class ChargeCode {
     @Id
     @GeneratedValue()
     private Integer id;
-
     private String name;
-
     private String code;
-
     private String description;
-
     private boolean expired;
-
-    //    @Column(name = "\"createdAt\"")
     private Date createdAt;
-
     private Date updatedAt;
+    @ManyToMany(mappedBy = "chargeCodes")
+    private List<TrackedTask> trackedTasks;
     //
     //    public ChargeCode() {
     //
