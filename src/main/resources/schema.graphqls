@@ -28,6 +28,7 @@ type TrackedTask {
 type Query {
     chargeCode(id: ID!): ChargeCode
     chargeCodes: [ChargeCode]!
+    chargeCodesActor: [ChargeCode]!
     trackedTasks: [TrackedTask]!
 }
 
