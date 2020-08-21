@@ -51,7 +51,7 @@ public class ChargeCodeResolver implements GraphQLQueryResolver {
             readingActorRef,
             new ChargeCodeActorClassic.FetchChargeCodes(), 1000
         ).toCompletableFuture();
-
+ 
         Object join = objectCompletableFuture.join();
         if (join instanceof Collection) {
             ((Collection) join).stream().forEach(System.out::println);
